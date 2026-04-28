@@ -1,0 +1,55 @@
+---
+import Button from './Button.astro';
+
+import TubiniLogo from '@assets/tubini-logo.svg';
+---
+
+<header class="header">
+  <TubiniLogo class="logo" />
+  <nav class="nav">
+    <a href="/">Home</a>
+    <a href="/features">Features</a>
+    <a href="/about">About</a>
+    <a href="/contact">Contact</a>
+  </nav>
+  <div class="actions">
+    <Button label="Contactanos" />
+    <Button label="Prueba la app" style='secondary'/>
+  </div>
+</header>
+<style>
+  .header {
+    display: flex;
+    height: 5em;
+    justify-content: space-around;
+    align-items: center;
+    background-color: var(--gray-color);
+  }
+  .logo {
+    width: 120px;
+    height: auto;
+  }
+  .nav {
+    display: flex;
+    gap: 20px;
+  }
+
+  .nav a {
+    text-decoration: none;
+    color: var(--text-color);
+    font-weight: 500;
+    padding: 10px 15px;
+    border-radius: 0.5em;
+    transition: color 0.2s ease-in-out;
+  }
+
+  .nav a:hover {
+    color: var(--primary-color);
+    background: var(--dark-color);
+  }
+
+  .actions {
+    display: flex;
+    gap: 10px;
+  }
+</style>

@@ -1,0 +1,50 @@
+---
+interface Props {
+  label?: string;
+  type?: 'button' | 'submit' | 'reset';
+  style?: 'primary' | 'secondary' | 'tertiary';
+}
+
+const { label = 'Click Me', type = 'button', style = 'primary' } = Astro.props;
+---
+
+<button class=`btn ${style || ''}` type={type}>
+  {label}
+</button>
+<style>
+  .btn {
+    display: flex;
+    padding: 16px 24px;
+    align-items: center;
+    gap: 8px;
+    border-radius: 10px;
+    border: 1px solid var(--Grey-15, #262626);
+    background: var(--Grey-08, #141414);
+    color: var(--text-color);
+  }
+
+  .btn:hover {
+    color: var(--primary-color);
+    cursor: pointer;
+  }
+
+  .primary {
+    background-color: var(--dark-color);
+    color: white;
+  }
+
+  .secondary {
+    background-color: var(--primary-color);
+    color: white;
+  }
+
+  .secondary:hover {
+    background-color: var(--secondary-color-hover);
+  }
+
+  .tertiary {
+    background-color: transparent;
+    color: var(--text-color);
+    border: 1px solid var(--text-color);
+  }
+</style>
