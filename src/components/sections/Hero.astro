@@ -1,6 +1,8 @@
 ---
 import { Image } from 'astro:assets';
 import Button from '../ui/Button.astro';
+
+import heroImage from '../../assets/images/hero-pic.webp';
 ---
 
 <section class="hero" id="home">
@@ -27,7 +29,7 @@ import Button from '../ui/Button.astro';
   </div>
   <div class="image-container">
     <Image
-      src="/src/assets/images/hero-pic.webp"
+      src={heroImage}
       alt="Hero Image"
       class="hero-image"
       width={500}
