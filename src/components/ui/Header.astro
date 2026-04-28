@@ -12,10 +12,10 @@ import TubiniLogo from '@assets/tubini-logo.svg';
     <span class="bar"></span>
   </div>
   <nav class="nav">
-    <a href="/">Home</a>
-    <a href="/features">Features</a>
-    <a href="/about">About</a>
-    <a href="/contact">Contact</a>
+    <a href="#home">Home</a>
+    <a href="#about">Acerca de</a>
+    <a href="#comments">Comentarios</a>
+    <a href="#contact">Contacto</a>
   </nav>
   <div class="actions">
     <Button label="Contactanos" />
@@ -28,6 +28,9 @@ import TubiniLogo from '@assets/tubini-logo.svg';
     justify-content: space-around;
     align-items: center;
     background-color: var(--gray-color);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
   }
   .logo {
     width: 120px;
