@@ -1,11 +1,41 @@
 ---
-import Welcome from '../components/Welcome.astro';
-import Layout from '../layouts/Layout.astro';
+import Header from '@components/ui/Header.astro';
+import Layout from '@layouts/Layout.astro';
+import Hero from '@components/sections/Hero.astro';
+import AnnouncementBar from '@components/ui/AnnouncementBar.astro';
+import ClientReviews from '@/components/sections/clients-reviews/ClientReviews.astro';
 
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+const reviews = [
+  {
+    rating: 5,
+    title: 'Asesores de confianza',
+    comment:
+      'Nuestra experiencia con Estatein fue excepcional. La dedicación y profesionalismo de su equipo hicieron que encontrar la casa de nuestros sueños fuera pan comido. ¡Altamente recomendados!',
+    name: 'Juan Pérez',
+    role: 'Cliente',
+  },
+  {
+    rating: 5,
+    title: 'Servicio excepcional',
+    comment:
+      'Tubini nos brindó un servicio de primera. Nos ayudaron a vender nuestra propiedad rápidamente y a un precio excelente. Estamos sumamente satisfechos con el resultado.',
+    name: 'María Gómez',
+    role: 'Cliente',
+  },
+  {
+    rating: 5,
+    title: 'Eficiente y confiable',
+    comment:
+      'El equipo de Tubini nos guió durante todo el proceso de compra. Su conocimiento y dedicación a nuestras necesidades fueron impresionantes. ¡Gracias por su apoyo!',
+    name: 'Carlos Rodríguez',
+    role: 'Cliente',
+  },
+];
 ---
 
 <Layout>
-  <Welcome />
+  <AnnouncementBar />
+  <Header />
+  <Hero />
+  <ClientReviews reviews={reviews} />
 </Layout>

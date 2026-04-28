@@ -1,0 +1,102 @@
+---
+import Button from '@components/ui/Button.astro';
+import CommentCard from './components/CommentCard.astro';
+
+import { type Review } from './interfaces/review';
+
+import NavigationStars from '@assets/navigation-star.svg';
+
+const { reviews } = Astro.props;
+---
+
+<section class="client-reviews">
+  <div class="container">
+    <span class="navigation-stars">
+      <NavigationStars class="star-1" />
+      <NavigationStars class="star-2" />
+      <NavigationStars class="star-3" />
+    </span>
+    <h2 class="section-title">Lo que dicen nuestros clientes</h2>
+    <div class="intro">
+      <p class="description">
+        Lea las historias de éxito y los testimonios conmovedores de nuestros
+        valiosos clientes. Descubra por qué eligieron Estatein para sus
+        necesidades inmobiliarias.
+      </p>
+      <Button label="Ver todos los testimonios" />
+    </div>
+  </div>
+  <div class="reviews">
+    {
+      reviews.map((review: Review, index: number) => (
+        <CommentCard
+          key={index}
+          title={review.title}
+          rating={review.rating}
+          comment={review.comment}
+          name={review.name}
+          role={review.role}
+        />
+      ))
+    }
+  </div>
+</section>
+<style>
+  .client-reviews {
+    padding: 60px 20px;
+    background-color: var(--dark-color);
+    color: var(--text-color);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .container {
+    position: relative;
+    max-width: 80em;
+    width: 100%;
+  }
+
+  .section-title {
+    font-size: 2em;
+    margin-bottom: 20px;
+  }
+
+  .intro {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 40px;
+  }
+
+  .description {
+    color: var(--gray-color-60);
+    font-size: medium;
+  }
+
+  .reviews {
+    display: flex;
+    width: 100%;
+    max-width: 80em;
+    justify-content: space-between;
+  }
+
+  .star-1 {
+    width: 20px;
+    opacity: 0.8;
+  }
+
+  .star-2 {
+    width: 15px;
+    opacity: 0.8;
+  }
+
+  .star-3 {
+    width: 10px;
+    opacity: 0.6;
+  }
+
+  .navigation-stars {
+    position: absolute;
+    left: -20px;
+  }
+</style>
