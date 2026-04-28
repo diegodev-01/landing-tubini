@@ -4,6 +4,7 @@ import Layout from '@layouts/Layout.astro';
 import Hero from '@components/sections/Hero.astro';
 import AnnouncementBar from '@components/ui/AnnouncementBar.astro';
 import ClientReviews from '@/components/sections/clients-reviews/ClientReviews.astro';
+import Footer from '@/components/ui/Footer.astro';
 
 const reviews = [
   {
@@ -38,4 +39,5 @@ const reviews = [
   <Header />
   <Hero />
   <ClientReviews reviews={reviews} />
+  <Footer />
 </Layout>

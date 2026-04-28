@@ -1,3 +1,155 @@
 ---
-
+import TubiniLogo from '@assets/tubini-logo.svg';
+import EmailSend from '@assets/email-send.svg';
 ---
+
+<footer class="footer">
+  <div class="container">
+    <div>
+      <TubiniLogo />
+      <div class="newsletter">
+        <label class="newsletter-label" for="email"
+          >Recibe nuestras actualizaciones</label
+        >
+        <div class="newsletter-form">
+          <input
+            class="newsletter-input"
+            type="email"
+            id="email"
+            placeholder="Ingresa tu correo electrónico"
+          />
+          <EmailSend class={'send-icon'} />
+        </div>
+      </div>
+    </div>
+    <nav class="footer-nav">
+      <div>
+        <h4>Contáctanos</h4>
+        <div>
+          <p>Email: <a href="mailto:info@tubini.com">info@tubini.com</a></p>
+          <p>Teléfono: <a href="tel:+1234567890">+1 (234) 567-890</a></p>
+          <p>
+            Nuestras oficinas <a
+              class="location"
+              href="https://maps.google.com/?q=Tubini"
+              target="_blank"
+              rel="noopener noreferrer">Av. Principal 123, Ciudad</a
+            >
+          </p>
+        </div>
+      </div>
+    </nav>
+  </div>
+  <div class="terms">
+    <span class="legal">
+      <p class="copyright">© 2024 Tubini. Todos los derechos reservados.</p>
+      <p class="terms-text">Términos y condiciones</p>
+    </span>
+    <span class="socials">
+      <a
+        href="https://www.facebook.com/tubini"
+        target="_blank"
+        rel="noopener noreferrer">Facebook</a
+      >
+      <a
+        href="https://www.twitter.com/tubini"
+        target="_blank"
+        rel="noopener noreferrer">Twitter</a
+      >
+      <a
+        href="https://www.instagram.com/tubini"
+        target="_blank"
+        rel="noopener noreferrer">Instagram</a
+      >
+    </span>
+  </div>
+</footer>
+<style>
+  .footer {
+    color: var(--text-color);
+    padding-top: 20px;
+    display: flex;
+    flex-direction: column;
+    border-top: 1px solid var(--gray-color);
+  }
+
+  .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 50px 100px;
+  }
+
+  .legal {
+    display: flex;
+    align-items: center;
+  }
+
+  .terms {
+    display: flex;
+    background-color: var(--gray-color);
+    justify-content: space-between;
+    padding-inline: 50px;
+    gap: 20px;
+  }
+
+  .socials {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .newsletter {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 20px;
+  }
+
+  .newsletter-label {
+    font-size: 1.2em;
+    color: var(--gray-color-60);
+  }
+
+  .newsletter-input {
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid var(--gray-color-15);
+    background-color: transparent;
+    width: 350px;
+  }
+
+  .newsletter-form {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    position: relative;
+  }
+
+  .send-icon {
+    position: absolute;
+    right: 10px;
+    cursor: pointer;
+    transition: transform 0.2s ease-in-out;
+    width: 20px;
+  }
+
+  .location {
+    color: var(--primary-color);
+    text-decoration: none;
+  }
+
+  .location:hover {
+    text-decoration: underline;
+  }
+
+  .send-icon:hover {
+    transform: translateY(-2px);
+  }
+
+  .footer-nav h4 {
+    margin-bottom: 20px;
+  }
+</style>
