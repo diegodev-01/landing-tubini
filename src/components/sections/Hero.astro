@@ -1,0 +1,104 @@
+---
+import { Image } from 'astro:assets';
+import Button from '../ui/Button.astro';
+---
+
+<section class="hero">
+  <div class="container">
+    <h1 class="title">Descubre la propiedad de tus sueños con Tubini</h1>
+    <p class="subtitle">
+      Tu búsqueda de la propiedad perfecta comienza aquí. Explora nuestro
+      catálogo para encontrar la casa de tus sueños.
+    </p>
+    <div class="buttons">
+      <Button label="Mas Información" />
+      <Button label="Explorar Características" />
+    </div>
+    <div class="stats">
+      <span class="stat-card">
+        <h3 class="stat-number">200+</h3>
+        <p>Clientes felices</p>
+      </span>
+      <span class="stat-card">
+        <h3 class="stat-number">10k+</h3>
+        <p>Propiedades para Clientes</p>
+      </span>
+    </div>
+  </div>
+  <div class="image-container">
+    <Image
+      src="/src/assets/images/hero-pic.webp"
+      alt="Hero Image"
+      class="hero-image"
+      width={500}
+      height={400}
+    />
+  </div>
+</section>
+<style>
+  .hero {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--dark-color);
+    color: var(--text-color);
+  }
+
+  .container {
+    max-width: 50%;
+    padding-left: 5em;
+  }
+
+  .image-container {
+    max-width: 50%;
+    background: linear-gradient(
+      238deg,
+      #2a213f 8.76%,
+      rgba(25, 25, 25, 0) 50.09%
+    );
+  }
+
+  .title {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+  }
+
+  .subtitle {
+    font-size: 1.2em;
+    margin-bottom: 30px;
+    color: var(--gray-color-60);
+  }
+
+  .buttons {
+    display: flex;
+    gap: 20px;
+    margin-bottom: 30px;
+  }
+
+  .stats {
+    display: flex;
+    gap: 40px;
+  }
+
+  .stat-card {
+    padding: 0 20px;
+    border-radius: 10px;
+    text-align: center;
+    background-color: var(--gray-color);
+    border: 1px solid var(--gray-color-15);
+    text-align: start;
+    width: 15em;
+  }
+
+  .stat-number {
+    font-size: 1.5em;
+    font-weight: bold;
+    margin-bottom: 0;
+  }
+
+  .hero-image {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+  }
+</style>
