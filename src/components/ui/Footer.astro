@@ -1,6 +1,10 @@
 ---
 import TubiniLogo from '@assets/tubini-logo.svg';
 import EmailSend from '@assets/email-send.svg';
+import FacebookIcon from '@assets/logos/facebook.svg';
+import LinkedInIcon from '@assets/logos/linkedin.svg';
+import InstagramIcon from '@assets/logos/instagram.svg';
+import TiktokIcon from '@assets/logos/tiktok.svg';
 ---
 
 <footer class="footer">
@@ -18,7 +22,7 @@ import EmailSend from '@assets/email-send.svg';
             id="email"
             placeholder="Ingresa tu correo electrónico"
           />
-          <EmailSend class={'send-icon'} />
+          <EmailSend class={'send'} />
         </div>
       </div>
     </div>
@@ -49,17 +53,22 @@ import EmailSend from '@assets/email-send.svg';
       <a
         href="https://www.facebook.com/tubini"
         target="_blank"
-        rel="noopener noreferrer">Facebook</a
+        rel="noopener noreferrer"><FacebookIcon class={"icon"} /></a
       >
       <a
-        href="https://www.twitter.com/tubini"
+        href="https://www.linkedin.com/company/tubini"
         target="_blank"
-        rel="noopener noreferrer">Twitter</a
+        rel="noopener noreferrer"><LinkedInIcon class={"icon"} /></a
       >
       <a
-        href="https://www.instagram.com/tubini"
+        href="https://www.instagram.com/tubini_app"
         target="_blank"
-        rel="noopener noreferrer">Instagram</a
+        rel="noopener noreferrer"><InstagramIcon class={"icon"} /></a
+      >
+      <a
+        href="https://www.tiktok.com/@tubiniapp"
+        target="_blank"
+        rel="noopener noreferrer"><TiktokIcon class={"icon"} /></a
       >
     </span>
   </div>
@@ -128,7 +137,7 @@ import EmailSend from '@assets/email-send.svg';
     position: relative;
   }
 
-  .send-icon {
+  .send {
     position: absolute;
     right: 10px;
     cursor: pointer;
@@ -145,11 +154,17 @@ import EmailSend from '@assets/email-send.svg';
     text-decoration: underline;
   }
 
-  .send-icon:hover {
+  .send:hover {
     transform: translateY(-2px);
   }
 
   .footer-nav h4 {
     margin-bottom: 20px;
+  }
+
+  .icon {
+    width: 24px;
+    height: 24px;
+    transition: transform 0.2s ease-in-out;
   }
 </style>
