@@ -99,4 +99,21 @@ const { reviews } = Astro.props;
     position: absolute;
     left: -20px;
   }
+
+  @media screen and (max-width: 768px) {
+    .intro {
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .reviews {
+      flex-direction: column;
+      gap: 30px;
+    }
+
+    .navigation-stars {
+      display: none;
+    }
+    
+  }
 </style>

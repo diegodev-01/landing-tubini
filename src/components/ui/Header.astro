@@ -6,6 +6,11 @@ import TubiniLogo from '@assets/tubini-logo.svg';
 
 <header class="header">
   <TubiniLogo class="logo" />
+  <div class="menu-toggle">
+    <span class="bar"></span>
+    <span class="bar"></span>
+    <span class="bar"></span>
+  </div>
   <nav class="nav">
     <a href="/">Home</a>
     <a href="/features">Features</a>
@@ -51,4 +56,86 @@ import TubiniLogo from '@assets/tubini-logo.svg';
     display: flex;
     gap: 10px;
   }
+
+  .menu-toggle {
+    display: none;
+  }
+
+  @media screen and (max-width: 768px) {
+    .header {
+      flex-wrap: wrap;
+      justify-content: space-between;
+      height: auto;
+      padding: 1em;
+    }
+
+    .nav {
+      display: none;
+      flex-direction: column;
+      width: 100%;
+      order: 3;
+      text-align: center;
+      transition: max-height 0.3s ease-in-out;
+      overflow: hidden;
+      max-height: 0;
+    }
+
+    .nav.active {
+      display: flex;
+      max-height: 300px;
+    }
+
+    .actions {
+      margin-top: 10px;
+    }
+
+    .logo {
+      width: 100px;
+    }
+
+    .menu-toggle {
+      display: block;
+      cursor: pointer;
+    }
+
+    .menu-toggle .bar {
+      display: block;
+      width: 25px;
+      height: 3px;
+      margin: 5px auto;
+      background-color: var(--text-color);
+      transition: all 0.3s ease-in-out;
+    }
+
+    .menu-toggle.active .bar:nth-child(2) {
+      opacity: 0;
+    }
+    .menu-toggle.active .bar:nth-child(1) {
+      transform: translateY(8px) rotate(45deg);
+    }
+    .menu-toggle.active .bar:nth-child(3) {
+      transform: translateY(-8px) rotate(-45deg);
+    }
+
+    .actions {
+      display: none;
+    }
+  }
 </style>
+<script>
+  const menuToggle = document.querySelector('.menu-toggle');
+  const nav = document.querySelector('.nav');
+  const navLinks = document.querySelectorAll('.nav a');
+
+  navLinks.forEach((link) => {
+    link.addEventListener('click', () => {
+      nav?.classList.remove('active');
+      menuToggle?.classList.remove('active');
+    });
+  });
+
+  menuToggle?.addEventListener('click', () => {
+    nav?.classList.toggle('active');
+    menuToggle?.classList.toggle('active');
+  });
+</script>

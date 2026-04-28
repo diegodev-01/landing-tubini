@@ -101,4 +101,30 @@ import Button from '../ui/Button.astro';
     height: auto;
     border-radius: 10px;
   }
+
+  @media screen and (max-width: 768px) {
+    .hero {
+      flex-direction: column;
+      padding: 2em 0;
+    }
+
+    .container {
+      max-width: 100%;
+      padding: 0 1em;
+      text-align: center;
+    }
+
+    .image-container {
+      max-width: 100%;
+      margin-top: 2em;
+    }
+
+    .buttons {
+      justify-content: center;
+    }
+
+    .stats {
+      justify-content: center;
+    }
+  }
 </style>

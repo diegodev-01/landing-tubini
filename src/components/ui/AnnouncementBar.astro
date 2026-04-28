@@ -2,59 +2,93 @@
 
 ---
 
-<section class="announcement-bar">
+<section
+  class="announcement-bar"
+  role="region"
+  aria-label="Barra de anuncios"
+  id="announcement"
+>
   <div class="container">
     <p class="announcement-text">
       ✨ Descubre la propiedad de tus sueños con Tubini
     </p>
     <a href="#features" class="learn-more">Mas Información</a>
   </div>
-  <p class="close-button">x</p>
+  <a class="close-button" id="close-btn" aria-label="Cerrar anuncio">x</a>
+  <style>
+    .announcement-bar {
+      color: white;
+      text-align: center;
+      padding: 10px 0;
+      display: flex;
+      font-size: medium;
+      align-items: center;
+      justify-content: space-between;
+      transition:
+        opacity 0.3s ease,
+        transform 0.3s ease;
+      opacity: 1;
+    }
+
+    .container {
+      display: flex;
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    .announcement-text {
+      margin: 0;
+      font-size: medium;
+    }
+
+    .learn-more {
+      display: inline-block;
+      margin-left: 20px;
+      text-decoration: none;
+      border-radius: 4px;
+      transition: background-color 0.2s ease-in-out;
+      text-decoration: underline;
+    }
+
+    .learn-more:hover {
+      color: var(--primary-color);
+    }
+
+    .close-button {
+      position: absolute;
+      right: 20px;
+      padding: 5px;
+      cursor: pointer;
+      background-color: transparent;
+    }
+
+    .close-button:hover {
+      color: var(--primary-color);
+    }
+
+    .announcement-bar.fade-out {
+      display: none;
+      transform: translateY(-100%);
+    }
+
+    @media screen and (max-width: 600px) {
+      .container {
+        flex-direction: column;
+        gap: 10px;
+      }
+
+      .learn-more {
+        margin-left: 0;
+      }
+    }
+  </style>
+  <script>
+    const announcement = document.getElementById('announcement');
+    const closeBtn = document.getElementById('close-btn');
+
+    closeBtn?.addEventListener('click', () => {
+      announcement?.classList.add('fade-out');
+    });
+  </script>
 </section>
-<style>
-  .announcement-bar {
-    color: white;
-    text-align: center;
-    padding: 10px 0;
-    display: flex;
-    font-size: medium;
-    align-items: center;
-    justify-content: space-between;
-  }
-
-  .container {
-    display: flex;
-    max-width: 800px;
-    margin: 0 auto;
-    padding: 0 20px;
-  }
-
-  .announcement-text {
-    margin: 0;
-    font-size: medium;
-  }
-
-  .learn-more {
-    display: inline-block;
-    margin-left: 20px;
-    text-decoration: none;
-    border-radius: 4px;
-    transition: background-color 0.2s ease-in-out;
-    text-decoration: underline;
-  }
-
-  .learn-more:hover {
-    color: var(--primary-color)
-  }
-
-  .close-button {
-    position: absolute;
-    right: 20px;
-    padding: 5px;
-    cursor: pointer;
-  }
-
-  .close-button:hover {
-    color: var(--primary-color);
-  }
-</style>

@@ -53,22 +53,22 @@ import TiktokIcon from '@assets/logos/tiktok.svg';
       <a
         href="https://www.facebook.com/tubini"
         target="_blank"
-        rel="noopener noreferrer"><FacebookIcon class={"icon"} /></a
+        rel="noopener noreferrer"><FacebookIcon class={'icon'} /></a
       >
       <a
         href="https://www.linkedin.com/company/tubini"
         target="_blank"
-        rel="noopener noreferrer"><LinkedInIcon class={"icon"} /></a
+        rel="noopener noreferrer"><LinkedInIcon class={'icon'} /></a
       >
       <a
         href="https://www.instagram.com/tubini_app"
         target="_blank"
-        rel="noopener noreferrer"><InstagramIcon class={"icon"} /></a
+        rel="noopener noreferrer"><InstagramIcon class={'icon'} /></a
       >
       <a
         href="https://www.tiktok.com/@tubiniapp"
         target="_blank"
-        rel="noopener noreferrer"><TiktokIcon class={"icon"} /></a
+        rel="noopener noreferrer"><TiktokIcon class={'icon'} /></a
       >
     </span>
   </div>
@@ -166,5 +166,32 @@ import TiktokIcon from '@assets/logos/tiktok.svg';
     width: 24px;
     height: 24px;
     transition: transform 0.2s ease-in-out;
+  }
+
+  @media screen and (max-width: 768px) {
+    .container {
+      flex-direction: column;
+      text-align: center;
+      padding: 20px;
+    }
+
+    .terms {
+      flex-direction: column;
+      text-align: center;
+      padding: 20px;
+    }
+
+    .legal {
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .socials {
+      justify-content: center;
+    }
+
+    .newsletter-input {
+      width: 100%;
+    }
   }
 </style>
