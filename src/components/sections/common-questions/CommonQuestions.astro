@@ -12,7 +12,7 @@ interface Question {
 const { questions } = Astro.props;
 ---
 
-<section class="client-reviews" id="comments">
+<section class="qa" id="comments">
   <div class="container">
     <span class="navigation-stars">
       <NavigationStars class="star-1" />
@@ -41,7 +41,7 @@ const { questions } = Astro.props;
   </div>
 </section>
 <style>
-  .client-reviews {
+  .qa {
     padding: 60px 20px;
     margin-inline: 5em;
     background-color: var(--dark-color);
@@ -102,6 +102,9 @@ const { questions } = Astro.props;
   }
 
   @media screen and (max-width: 768px) {
+    .qa {
+      margin-inline: 0;
+    }
     .intro {
       flex-direction: column;
       gap: 20px;

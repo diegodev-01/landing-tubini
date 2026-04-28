@@ -46,4 +46,22 @@ import Button from '../ui/Button.astro';
     font-size: medium;
     margin: 0 auto;
   }
+
+  @media screen and (max-width: 768px) {
+    .cta-section {
+      flex-direction: column;
+      text-align: center;
+      margin: 0;
+    }
+
+    .container {
+      max-width: 100%;
+      padding: 0;
+    }
+
+    .cta-description {
+      margin-bottom: 20px;
+    }
+    
+  }
 </style>
