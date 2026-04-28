@@ -1,0 +1,49 @@
+---
+import Button from '../ui/Button.astro';
+---
+
+<section class="cta-section">
+  <div class="container">
+    <h2 class="cta-title">
+      Comienza hoy mismo tu aventura en el mundo inmobiliario.
+    </h2>
+    <p class="cta-description">
+      La propiedad de tus sueños está a solo un clic. Ya sea que busques un
+      nuevo hogar, una inversión estratégica o asesoramiento inmobiliario
+      experto, Tubini te acompaña en cada paso del proceso. Da el primer paso
+      hacia tus objetivos inmobiliarios y explora nuestras propiedades
+      disponibles o contacta con nuestro equipo para recibir asistencia
+      personalizada.
+    </p>
+  </div>
+  <Button style='secondary' label="Probar la plataforma" />
+</section>
+<style>
+  .cta-section {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 60px 20px;
+    margin-inline: 5em;
+    background-color: var(--dark-color);
+    color: var(--text-color);
+  }
+
+  .container {
+    max-width: 50em;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .cta-title {
+    font-size: 2em;
+    margin-bottom: 20px;
+  }
+
+  .cta-description {
+    color: var(--gray-color-60);
+    font-size: medium;
+    margin: 0 auto;
+  }
+</style>
