@@ -1,12 +1,15 @@
 ---
-import Button from '@components/ui/Button.astro';
-import CommentCard from './components/CommentCard.astro';
-
-import { type Review } from './interfaces/review';
+import QuestionCard from './components/QuestionCard.astro';
+import Button from '@/components/ui/Button.astro';
 
 import NavigationStars from '@assets/navigation-star.svg';
 
-const { reviews } = Astro.props;
+interface Question {
+  question: string;
+  answer: string;
+}
+
+const { questions } = Astro.props;
 ---
 
 <section class="client-reviews" id="comments">
@@ -16,26 +19,22 @@ const { reviews } = Astro.props;
       <NavigationStars class="star-2" />
       <NavigationStars class="star-3" />
     </span>
-    <h2 class="section-title">Lo que dicen nuestros clientes</h2>
+    <h2 class="section-title">Preguntas frecuentes</h2>
     <div class="intro">
       <p class="description">
-        Lea las historias de éxito y los testimonios conmovedores de nuestros
-        valiosos clientes. Descubra por qué eligieron Tubini para sus
-        necesidades inmobiliarias.
+        Encuentre respuestas a sus preguntas más comunes sobre nuestros
+        servicios y procesos.
       </p>
-      <Button label="Ver todos los testimonios" />
+      <Button label="Ver todas las preguntas frecuentes" />
     </div>
   </div>
   <div class="reviews">
     {
-      reviews.map((review: Review, index: number) => (
-        <CommentCard
+      questions.map((question: Question, index: number) => (
+        <QuestionCard
           key={index}
-          title={review.title}
-          rating={review.rating}
-          comment={review.comment}
-          name={review.name}
-          role={review.role}
+          question={question.question}
+          answer={question.answer}
         />
       ))
     }
@@ -116,6 +115,5 @@ const { reviews } = Astro.props;
     .navigation-stars {
       display: none;
     }
-    
   }
 </style>
