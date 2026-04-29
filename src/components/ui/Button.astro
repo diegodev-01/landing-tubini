@@ -1,16 +1,23 @@
 ---
 interface Props {
   label?: string;
+  href?: string;
   type?: 'button' | 'submit' | 'reset';
   style?: 'primary' | 'secondary' | 'tertiary';
 }
 
-const { label = 'Click Me', type = 'button', style = 'primary' } = Astro.props;
+const { label = 'Click Me', href, type = 'button', style = 'primary' } = Astro.props;
 ---
 
-<button class=`btn ${style || ''}` type={type}>
-  {label}
-</button>
+{href ? (
+  <a href={href} target="_blank" rel="noopener noreferrer" class={`btn ${style || ''}`}>
+    {label}
+  </a>
+) : (
+  <button class={`btn ${style || ''}`} type={type}>
+    {label}
+  </button>
+)}
 <style>
   .btn {
     display: flex;
